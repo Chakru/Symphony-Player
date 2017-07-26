@@ -1,0 +1,35 @@
+{% extends 'music/base.html' %}
+{% block title %}Adding Song{% endblock %}
+{% block albums_active %}active{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+    <div class="row">
+        <!-- Left Wing Information -->
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="{% url 'Music:detail' album.id %}">
+                        {% if album.album_logo %}
+                            <img src="{{ album.album_logo.url }}" class="img-responsive">
+                        {% else %}
+                        <h3>No Image to display</h3>
+                        {% endif %}
+                    </a>
+                <h1>{{ album.album_title }}<small>{{ album.genre }}</small></h1>
+                <h2>{{ album.artist }}</h2>
+                </div>
+            </div>
+        </div>
+    <!-- Right Wing Information -->
+    <div class="col-sm-8 col-md-9">
+        <ul class="nav nav-pills" style="margin-bottom: 10px;">
+            <li role="presentation"><a href="{% url 'Music:detail' album.id %}">View All</a></li>
+            <li role="presentation" class="active"><a href="#">Add New Song</a></li>
+        </ul>
+    </div>
+
+
+
+    </div>
+    </div>
+{% endblock %}

@@ -1,2 +1,2 @@
-# DjangoProject
-Symphony Music Player
+# Django-Project
+Backend Django
